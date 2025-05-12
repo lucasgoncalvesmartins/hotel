@@ -1,0 +1,14 @@
+CREATE TABLE hospede (
+ cpf VARCHAR(14) PRIMARY KEY,
+ nome VARCHAR(100) NOT NULL,
+ sobrenome VARCHAR(100) NOT NULL,
+ sexo CHAR(1),
+ dataNascimento DATE
+);
+CREATE TABLE controle (
+ hospedeCpf VARCHAR(14) PRIMARY KEY,
+ paisOrigem VARCHAR(100),
+ previsaoEstadia VARCHAR(100),
+ ciasAereas VARCHAR(100),
+ FOREIGN KEY (hospedeCpf) REFERENCES hospede(cpf)
+);
